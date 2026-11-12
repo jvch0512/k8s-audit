@@ -1,0 +1,21 @@
+{
+  "name": "k8s-audit",
+  "version": "0.1.0",
+  "description": "Static security audit of Kubernetes manifests: privileged pods, root users, host access, image tags, limits, exposure.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "bin": { "k8s-audit": "dist/src/cli.js" },
+  "files": ["dist/src"],
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/test/audit.test.js",
+    "lint": "tsc --noEmit"
+  },
+  "repository": "github:jvch0512/k8s-audit",
+  "keywords": ["kubernetes", "security", "devsecops", "static-analysis", "typescript"],
+  "dependencies": { "yaml": "^2.6.0" },
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "^5.6.0" },
+  "engines": { "node": ">=20" }
+}
